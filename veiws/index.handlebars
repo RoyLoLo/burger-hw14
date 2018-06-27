@@ -1,0 +1,32 @@
+
+
+
+<h2>Burger App</h2>
+
+<h3>Burgers ready to eat</h3>
+<ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{>burgers/burgers-block devoured=false}}
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h3>Burgers Eaten already</h3>
+<ul>
+  {{#each burgers}}
+    {{if devoured}}
+      {{{<li>name</li>}}}
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h3>Add a burger</h3>
+
+<form class="create-form">
+
+  <div class="form-gruop">
+    <label for="burger"> Burger Here</label>
+    <input type="text" id="burger" name="name">
+  </div>
+</form>
